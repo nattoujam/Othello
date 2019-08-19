@@ -69,9 +69,9 @@ namespace Othello_v1._0
             this.imageSize = empty.Width;
             this.Size = new Size((int)(imageSize * scale), (int)(imageSize * scale));
 
-            btow = new Bitmap(@"D:\natto\Pictures\gif\black_to_white.gif");
-            wtob = new Bitmap(@"D:\natto\Pictures\gif\white_to_black.gif");
-            //btow = new Bitmap(Properties.Resources.black_to_white);
+            //btow = new Bitmap(@"D:\natto\Pictures\gif\black_to_white.gif");
+            wtob = new Bitmap(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\') + @"\Resources\white_to_black.gif");
+            btow = new Bitmap(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\') + @"\Resources\black_to_white.gif");
             max = btow.GetFrameCount(new FrameDimension(btow.FrameDimensionsList[0]));
         }
 
