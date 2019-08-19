@@ -83,6 +83,16 @@ namespace Othello_v1._0.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap black_to_white {
+            get {
+                object obj = ResourceManager.GetObject("black_to_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap canreverse {
             get {
                 object obj = ResourceManager.GetObject("canreverse", resourceCulture);
@@ -106,6 +116,16 @@ namespace Othello_v1._0.Properties {
         internal static System.Drawing.Bitmap white {
             get {
                 object obj = ResourceManager.GetObject("white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap white_to_black {
+            get {
+                object obj = ResourceManager.GetObject("white_to_black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

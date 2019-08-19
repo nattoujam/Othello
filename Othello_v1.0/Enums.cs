@@ -11,7 +11,7 @@ namespace Othello_v1._0
         Empty,
         Black,
         White,
-        CanReverse
+        CanReverse,
     }
 
     public enum TurnState

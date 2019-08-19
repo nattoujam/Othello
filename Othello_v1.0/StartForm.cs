@@ -13,12 +13,14 @@ namespace Othello_v1._0
     public partial class StartForm : Form
     {
         private Form playForm;
+        public static bool Debug;
 
         public StartForm()
         {
             InitializeComponent();
             Selecter.SelectedIndex = 0;
             label1.BackColor = Color.Transparent;
+            Debug = isDebug.Checked;
         }
 
         private Rules SelectedRule()
@@ -52,6 +54,11 @@ namespace Othello_v1._0
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void IsDebug_CheckedChanged(object sender, EventArgs e)
+        {
+            Debug = isDebug.Checked;
         }
     }
 }

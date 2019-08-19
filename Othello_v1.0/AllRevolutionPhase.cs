@@ -9,13 +9,13 @@ namespace Othello_v1._0
     class AllRevolutionPhase : Phase
     {
         public AllRevolutionPhase(Board board): base(board) { }
-        public override int Play(CellColorTypes myColor, Vector2 clickedCell)
+        public override int Play(TurnState myColor, Vector2 clickedCell)
         {
             int reversed = 0;
 
-            //石を置ける
-            if (this.board.GetCellColor(clickedCell) == CellColorTypes.CanReverse)
-            {
+            ////石を置ける
+            //if (this.board.GetCellColor(clickedCell) == CellColorTypes.CanReverse)
+            //{
                 //角に置いたのなら，すべての石を裏返す
                 var corners = board.GetCorner();
                 if (corners.Contains(clickedCell))
@@ -39,11 +39,11 @@ namespace Othello_v1._0
                             }
                         }
                     }
-                    baseRule.Reverse(CellColorTypes.White, blackCells);
-                    baseRule.Reverse(CellColorTypes.Black, whiteCells);
+                    baseRule.Reverse(TurnState.White, blackCells);
+                    baseRule.Reverse(TurnState.Black, whiteCells);
 
-                    reversed += (myColor == CellColorTypes.Black) ? whiteCells.Count() : blackCells.Count();
-                    reversed -= (myColor == CellColorTypes.Black) ? blackCells.Count() : whiteCells.Count();
+                    reversed += (myColor == TurnState.Black) ? whiteCells.Count() : blackCells.Count();
+                    reversed -= (myColor == TurnState.Black) ? blackCells.Count() : whiteCells.Count();
                     Console.WriteLine(reversed);
 
                     //選択したセルに石を置く
@@ -56,7 +56,7 @@ namespace Othello_v1._0
                 var reverseList = baseRule.GetReverseCells(myColor, clickedCell);
                 reversed += reverseList.Count();
                 baseRule.Reverse(myColor, reverseList);
-            }
+            //}
             return reversed;
         }
     }
