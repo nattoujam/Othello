@@ -25,7 +25,7 @@ namespace Othello_v1._0
         /// <param name="myColor"></param>
         /// <param name="clickedCell"></param>
         /// <returns></returns>
-        public abstract int Play(CellColorTypes myColor, Vector2 clickedCell);
+        public abstract int Play(TurnState myColor, Vector2 clickedCell);
 
         /// <summary>
         /// clickedCellに石が置けるならtrue

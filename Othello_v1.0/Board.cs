@@ -21,9 +21,21 @@ namespace Othello_v1._0
         }
     }
 
+    public struct BoardUnit
+    {
+        public CellColorTypes ColorType { get; set; }
+        public bool IsReverse { get; set; }
+        public BoardUnit(CellColorTypes c, bool b)
+        {
+            ColorType = c;
+            IsReverse = b;
+        }
+    }
+
     class Board
     {
-        public CellColorTypes[,] board { get; } = new CellColorTypes[size, size];
+        //public CellColorTypes[,] board { get; } = new CellColorTypes[size, size];
+        public BoardUnit[,] board { get; private set; } = new BoardUnit[size, size];
 
         private const int size = 10;
         
@@ -39,40 +51,51 @@ namespace Othello_v1._0
             {
                 for(int y = 0; y < size; y++)
                 {
-                    this.board[x, y] = CellColorTypes.Empty;
+                    this.board[x, y] = new BoardUnit(CellColorTypes.Empty, false);
                 } 
             }
 
             //初期配置
-            this.board[4, 4] = CellColorTypes.Black;
-            this.board[5, 5] = CellColorTypes.Black;
-            this.board[4, 5] = CellColorTypes.White;
-            this.board[5, 4] = CellColorTypes.White;
+            this.board[4, 4].ColorType = CellColorTypes.Black;
+            this.board[5, 5].ColorType = CellColorTypes.Black;
+            this.board[4, 5].ColorType = CellColorTypes.White;
+            this.board[5, 4].ColorType = CellColorTypes.White;
         }
 
-        public void BoardUpdate()
+        public void RemoveEmpty()
         {
             for (int x = 0; x < size; x++)
             {
                 for (int y = 0; y < size; y++)
                 {
-                    if(this.board[x, y] == CellColorTypes.CanReverse)
+                    switch(this.board[x, y].ColorType)
                     {
-                        Vector2 v2 = new Vector2(x, y);
-                        CellUpdate(CellColorTypes.Empty, v2);
+                        case CellColorTypes.CanReverse:
+                            BoardColorUpdate(CellColorTypes.Empty, new Vector2(x, y));
+                            break;
                     }
                 }
             }
         }
 
-        public void CellUpdate(CellColorTypes _color, Vector2 _vector2)
+        public void BoardColorUpdate(CellColorTypes _color, Vector2 _vector2)
         {
-            this.board[_vector2.X, _vector2.Y] = _color;
+            this.board[_vector2.X, _vector2.Y].ColorType = _color;
+        }
+
+        public void BoardReverseUpdate(bool b, Vector2 v)
+        {
+            this.board[v.X, v.Y].IsReverse = b;
         }
 
         public CellColorTypes GetCellColor(Vector2 _vector2)
         {
-            return this.board[_vector2.X, _vector2.Y];
+            return this.board[_vector2.X, _vector2.Y].ColorType;
+        }
+
+        public bool IsReverse(Vector2 v)
+        {
+            return this.board[v.X, v.Y].IsReverse;
         }
 
         public Vector2 GetBoardLength()

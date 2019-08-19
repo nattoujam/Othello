@@ -28,10 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.DebugColorLabel = new System.Windows.Forms.Label();
+            this.DebugIsReverseLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // DebugColorLabel
+            // 
+            this.DebugColorLabel.AutoSize = true;
+            this.DebugColorLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DebugColorLabel.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.DebugColorLabel.Location = new System.Drawing.Point(3, 0);
+            this.DebugColorLabel.Name = "DebugColorLabel";
+            this.DebugColorLabel.Size = new System.Drawing.Size(35, 12);
+            this.DebugColorLabel.TabIndex = 0;
+            this.DebugColorLabel.Text = "label1";
+            // 
+            // DebugIsReverseLabel
+            // 
+            this.DebugIsReverseLabel.AutoSize = true;
+            this.DebugIsReverseLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DebugIsReverseLabel.Location = new System.Drawing.Point(3, 12);
+            this.DebugIsReverseLabel.Name = "DebugIsReverseLabel";
+            this.DebugIsReverseLabel.Size = new System.Drawing.Size(35, 12);
+            this.DebugIsReverseLabel.TabIndex = 1;
+            this.DebugIsReverseLabel.Text = "label1";
+            // 
+            // Cell
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DebugIsReverseLabel);
+            this.Controls.Add(this.DebugColorLabel);
+            this.DoubleBuffered = true;
+            this.Name = "Cell";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label DebugColorLabel;
+        private System.Windows.Forms.Label DebugIsReverseLabel;
     }
 }

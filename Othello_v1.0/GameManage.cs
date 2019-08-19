@@ -50,9 +50,9 @@ namespace Othello_v1._0
                 {
                     TurnCount++;
 
-                    //クリックしたところに石を置こうとする
+                    //クリックしたところに石を置く
                     //int canReverseCount = this.rule.Phase(this.GetTurnColor(Turn), clickCell);
-                    int canReverseCount = phase.Play(Enums.ToCellColor(Turn), clickedCell);
+                    int canReverseCount = phase.Play(Turn, clickedCell);
 
                     //石を置けた
                     if (canReverseCount != 0)
@@ -77,7 +77,7 @@ namespace Othello_v1._0
                         //パスの可能性を吟味//
 
                         //ボードの更新
-                        this.board.BoardUpdate();
+                        this.board.RemoveEmpty();
                         //SetCanPutCells(this.Turn);
 
                         //パス
