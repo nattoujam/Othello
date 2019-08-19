@@ -12,6 +12,8 @@ namespace Othello_v1._0
 {
     public partial class PlayForm : Form
     {
+        private readonly bool Debug = StartForm.Debug;
+
         private readonly GameManage gm;
         private readonly Player player;
         private readonly Cell[,] cells = new Cell[8, 8];    //boardの実体
@@ -22,6 +24,7 @@ namespace Othello_v1._0
         {
             InitializeComponent();
             RuleName.Text = $"ルール: {Enums.RuleName(rule)}";
+            debug1.Visible = Debug;
 
             //initialize board
             for (int x = 0; x < 10; x++)
@@ -114,7 +117,10 @@ namespace Othello_v1._0
             {
                 for (int y = 0; y < this.cells.GetLength(1); y++)
                 {
-                    this.cells[x, y].CellColor = this.board.GetCellColor(new Vector2(x + 1, y + 1));
+                    var v = new Vector2(x + 1, y + 1);
+                    this.cells[x, y].CellColor = this.board.GetCellColor(v);
+                    this.cells[x, y].IsReverse = this.board.IsReverse(v);
+                    this.board.BoardReverseUpdate(false, v);
                 }
             }
         }

@@ -35,7 +35,7 @@ namespace Othello_v1._0
                     //返せる石が存在しない場所は無視
                     try
                     {
-                        if (GetReverseCells(Enums.ToCellColor(check), here).Count == 0) continue;
+                        if (GetReverseCells(check, here).Count == 0) continue;
                     }
                     catch
                     {
@@ -43,14 +43,14 @@ namespace Othello_v1._0
                         throw;
                     }
 
-                    board.CellUpdate(CellColorTypes.CanReverse, here);
+                    board.BoardColorUpdate(CellColorTypes.CanReverse, here);
                     canPutCells.Add(here);
                 }
             }
             return canPutCells;
         }
 
-        public List<Vector2> GetReverseCells(CellColorTypes _myColor, Vector2 _vector2)
+        public List<Vector2> GetReverseCells(TurnState _myColor, Vector2 _vector2)
         {
             //Vector2 にしろ
             int[,] unitVector = new int[,] { {0, 1}, {1, 1}, {1, 0},{1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1} };
@@ -64,11 +64,11 @@ namespace Othello_v1._0
                 {
                     Vector2 currentCell = new Vector2(_vector2.X + k * unitVector[i, 0], _vector2.Y + k * unitVector[i, 1]);
 
-                    if (this.board.GetCellColor(currentCell) == GetOppositeColor(_myColor))
+                    if (this.board.GetCellColor(currentCell) == GetOppositeColor(Enums.ToCellColor(_myColor)))
                     {
                         tempList.Add(currentCell);
                     }
-                    else if(this.board.GetCellColor(currentCell) == _myColor)
+                    else if(this.board.GetCellColor(currentCell) == Enums.ToCellColor(_myColor))
                     {
                         list.AddRange(tempList);
                         break;
@@ -83,40 +83,9 @@ namespace Othello_v1._0
             return list;
         }
 
-        /*
-        /// <summary>
-        /// 置けたら新しく石を置き，裏返した石の個数を返す
-        /// </summary>
-        /// <param name="_mycolor">新しく置く石の色</param>
-        /// <param name="_input">新しく置く石の座標</param>
-        /// <returns></returns>
-        public int Phase(CellColorTypes _mycolor, Vector2 _input)
+        public void PutStone(TurnState myColor, Vector2 _vector2)
         {
-            int canReverse = 0;
-
-            //石を置ける
-            if (this.board.GetCellColor(_input) == CellColorTypes.CanReverse)
-            {
-                //前処理
-                Reverse(_mycolor, addRule.BeforeProcess(board, _input, _mycolor));
-
-                //石を置いて，裏返す
-                PutStone(_mycolor, _input);
-                List<Vector2> reverseList = GetReverseCells(_mycolor, _input);
-                canReverse = reverseList.Count();
-                Reverse(_mycolor, reverseList);
-
-                //後処理
-                Reverse(_mycolor, addRule.AfterProcess(board, _input, _mycolor));
-            }
-
-            return canReverse;
-        }
-        */
-
-        public void PutStone(CellColorTypes _color, Vector2 _vector2)
-        {
-             this.board.CellUpdate(_color, _vector2);
+             this.board.BoardColorUpdate(Enums.ToCellColor(myColor), _vector2);
         }
 
         /// <summary>
@@ -124,14 +93,15 @@ namespace Othello_v1._0
         /// </summary>
         /// <param name="_color"></param>
         /// <param name="_vector2"></param>
-        public void Reverse(CellColorTypes _color, List<Vector2> list)
+        public void Reverse(TurnState state, List<Vector2> list)
         {
             
             if (list.Count != 0)
             {
                 foreach (Vector2 i in list)
                 {
-                    this.board.CellUpdate(_color, i);
+                    this.board.BoardColorUpdate(Enums.ToCellColor(state), i);
+                    this.board.BoardReverseUpdate(true, i);
                 }
             }
         }

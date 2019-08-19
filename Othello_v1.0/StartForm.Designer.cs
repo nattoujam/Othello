@@ -32,6 +32,7 @@
             this.CloseButton = new System.Windows.Forms.Button();
             this.Selecter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.isDebug = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // StartButton
@@ -81,12 +82,24 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "ゲームルール";
             // 
+            // isDebug
+            // 
+            this.isDebug.AutoSize = true;
+            this.isDebug.Location = new System.Drawing.Point(364, 323);
+            this.isDebug.Name = "isDebug";
+            this.isDebug.Size = new System.Drawing.Size(56, 16);
+            this.isDebug.TabIndex = 5;
+            this.isDebug.Text = "Debug";
+            this.isDebug.UseVisualStyleBackColor = true;
+            this.isDebug.CheckedChanged += new System.EventHandler(this.IsDebug_CheckedChanged);
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Othello_v1._0.Properties.Resources.othello;
             this.ClientSize = new System.Drawing.Size(796, 496);
+            this.Controls.Add(this.isDebug);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Selecter);
             this.Controls.Add(this.CloseButton);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.ComboBox Selecter;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox isDebug;
     }
 }

@@ -75,6 +75,9 @@
     <Compile Include="StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cell.resx">
+      <DependentUpon>Cell.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlayForm.resx">
       <DependentUpon>PlayForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +124,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\othello.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_to_white.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_to_black.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
