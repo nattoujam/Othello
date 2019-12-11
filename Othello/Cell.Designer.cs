@@ -1,4 +1,4 @@
-﻿namespace Othello_v1._0
+﻿namespace Othello
 {
     partial class Cell
     {

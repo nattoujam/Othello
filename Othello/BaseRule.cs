@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Othello_v1._0
+namespace Othello
 {
     class BaseRule
     {
@@ -89,7 +89,7 @@ namespace Othello_v1._0
         }
 
         /// <summary>
-        /// listの石を裏返す(_colorにする)
+        /// listの石を裏返す(渡したTurnStateの色にする)
         /// </summary>
         /// <param name="_color"></param>
         /// <param name="_vector2"></param>

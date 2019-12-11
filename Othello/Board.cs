@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Othello_v1._0
+namespace Othello
 {
     public struct Vector2
     {
@@ -34,15 +34,11 @@ namespace Othello_v1._0
 
     class Board
     {
+        private const int size = 10;
+
         //public CellColorTypes[,] board { get; } = new CellColorTypes[size, size];
         public BoardUnit[,] board { get; private set; } = new BoardUnit[size, size];
 
-        private const int size = 10;
-        
-        public Board()
-        {
-
-        }
 
         public void Init()
         {

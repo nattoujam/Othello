@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Othello_v1._0.Properties {
+namespace Othello.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Othello_v1._0.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Othello_v1._0.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Othello.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -103,9 +103,9 @@ namespace Othello_v1._0.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap othello {
+        internal static System.Drawing.Bitmap startPage {
             get {
-                object obj = ResourceManager.GetObject("othello", resourceCulture);
+                object obj = ResourceManager.GetObject("startPage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

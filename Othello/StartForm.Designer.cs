@@ -1,4 +1,4 @@
-﻿namespace Othello_v1._0
+﻿namespace Othello
 {
     partial class StartForm
     {
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Othello_v1._0.Properties.Resources.othello;
+            this.BackgroundImage = global::Othello.Properties.Resources.startPage;
             this.ClientSize = new System.Drawing.Size(796, 496);
             this.Controls.Add(this.isDebug);
             this.Controls.Add(this.label1);

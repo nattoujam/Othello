@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Othello_v1._0
+namespace Othello
 {
     public partial class StartForm : Form
     {
@@ -21,6 +21,7 @@ namespace Othello_v1._0
             Selecter.SelectedIndex = 0;
             label1.BackColor = Color.Transparent;
             Debug = isDebug.Checked;
+            this.BackgroundImage = Properties.Resources.startPage;
         }
 
         private Rules SelectedRule()

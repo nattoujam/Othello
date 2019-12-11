@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Othello_v1._0
+namespace Othello
 {
     class Player
     {

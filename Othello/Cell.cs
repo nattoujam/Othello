@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
 
-namespace Othello_v1._0
+namespace Othello
 {
     public partial class Cell : UserControl
     {

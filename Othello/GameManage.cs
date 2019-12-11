@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Othello_v1._0
+namespace Othello
 {
     class GameManage
     {

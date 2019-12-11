@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Othello_v1._0
+namespace Othello
 {
     abstract class Phase
     {
@@ -20,11 +20,14 @@ namespace Othello_v1._0
         }
 
         /// <summary>
-        /// clickedCellへ石を置いて裏返すなどの1ターンに行われる処理
+        /// clickedCellへ石を置いて裏返すなどの1ターンに行われる処理。
+        /// 裏返した石の総数を返す。
         /// </summary>
         /// <param name="myColor"></param>
         /// <param name="clickedCell"></param>
-        /// <returns></returns>
+        /// <returns>
+        /// 裏返す石の総数
+        /// </returns>
         public abstract int Play(TurnState myColor, Vector2 clickedCell);
 
         /// <summary>
