@@ -34,6 +34,9 @@ namespace Othello
                 case 2:
                     s = Rules.AllRevolution;
                     break;
+                case 3:
+                    s = Rules.WindPressure;
+                    break;
                 default:
                     s = Rules.Normal;
                     break;

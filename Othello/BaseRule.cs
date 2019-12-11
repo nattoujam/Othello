@@ -52,7 +52,7 @@ namespace Othello
 
         public List<Vector2> GetReverseCells(TurnState _myColor, Vector2 _vector2)
         {
-            //Vector2 にしろ
+            //TODO: Vector2 にしろ
             int[,] unitVector = new int[,] { {0, 1}, {1, 1}, {1, 0},{1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1} };
             //List<Vector2> tempList = new List<Vector2>();
             List<Vector2> list = new List<Vector2>();

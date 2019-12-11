@@ -59,6 +59,9 @@ namespace Othello
                 case Rules.AllRevolution:
                     phase = new AllRevolutionPhase(board);
                     break;
+                case Rules.WindPressure:
+                    phase = new WindPressurePhase(board);
+                    break;
                 default:
                     phase = new DefaultPhase(board);
                     break;

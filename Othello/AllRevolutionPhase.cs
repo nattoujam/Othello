@@ -28,7 +28,7 @@ namespace Othello
                         for (int y = 1; y < length.Y - 1; y++)
                         {
                             Vector2 l = new Vector2(x, y);
-                            Console.WriteLine($"{l.X}, {l.Y}");
+                            //Console.WriteLine($"{l.X}, {l.Y}");
                             if (board.GetCellColor(l) == CellColorTypes.Black)
                             {
                                 blackCells.Add(l);
@@ -44,7 +44,7 @@ namespace Othello
 
                     reversed += (myColor == TurnState.Black) ? whiteCells.Count() : blackCells.Count();
                     reversed -= (myColor == TurnState.Black) ? blackCells.Count() : whiteCells.Count();
-                    Console.WriteLine(reversed);
+                    Console.WriteLine("AllRevolutionPhase: " + reversed);
 
                     //選択したセルに石を置く
                     baseRule.PutStone(myColor, clickedCell);

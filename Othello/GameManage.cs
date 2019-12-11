@@ -54,9 +54,8 @@ namespace Othello
                     //int canReverseCount = this.rule.Phase(this.GetTurnColor(Turn), clickCell);
                     int canReverseCount = phase.Play(Turn, clickedCell);
 
-                    //石を置けた
-                    if (canReverseCount != 0)
-                    {
+                    //if (canReverseCount >= 0)
+                    //{
                         //置いた石の個数を更新
                         switch(this.Turn)
                         {
@@ -76,8 +75,9 @@ namespace Othello
                         //ここから相手のターン//
                         //パスの可能性を吟味//
 
+                        //TODO: 謎
                         //ボードの更新
-                        this.board.RemoveEmpty();
+                        this.board.RemoveCanReverse();
                         //SetCanPutCells(this.Turn);
 
                         //パス
@@ -96,7 +96,7 @@ namespace Othello
                                 hadPassed = true;
                             }
                         }
-                    }
+                    //}
                 }
             }
             catch(ArgumentNullException)

@@ -32,7 +32,8 @@ namespace Othello
     {
         Normal,
         Revolution,
-        AllRevolution
+        AllRevolution,
+        WindPressure
     }
     static class Enums
     {
@@ -69,7 +70,7 @@ namespace Othello
 
         public static string RuleName(Rules rule)
         {
-            string[] names = { "ノーマル", "革命(角のみ)", "革命" };
+            string[] names = { "ノーマル", "革命(角のみ)", "革命", "風圧" };
             return names[(int)rule];
         }
     }

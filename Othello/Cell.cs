@@ -118,7 +118,7 @@ namespace Othello
                 IsReverse = false;
                 return;
             }
-            Console.WriteLine(count);
+            //Console.WriteLine(count);
 
             count++;
             ImageAnimator.UpdateFrames(gif);

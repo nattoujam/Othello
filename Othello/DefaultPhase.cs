@@ -18,9 +18,10 @@ namespace Othello
             //{
             //石を置いて，裏返す
             baseRule.PutStone(myColor, clickedCell);
-                List<Vector2> reverseList = baseRule.GetReverseCells(myColor, clickedCell);
+            List<Vector2> reverseList = baseRule.GetReverseCells(myColor, clickedCell);
             int reversed = reverseList.Count();
             baseRule.Reverse(myColor, reverseList);
+            Console.WriteLine($"reversed: {reversed}");
             //}
             return reversed;
         }

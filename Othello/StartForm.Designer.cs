@@ -65,7 +65,8 @@
             this.Selecter.Items.AddRange(new object[] {
             "Normal",
             "Revolution",
-            "AllRevolution"});
+            "AllRevolution",
+            "WindPressure"});
             this.Selecter.Location = new System.Drawing.Point(74, 371);
             this.Selecter.Name = "Selecter";
             this.Selecter.Size = new System.Drawing.Size(170, 29);

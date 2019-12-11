@@ -58,7 +58,7 @@ namespace Othello
             this.board[5, 4].ColorType = CellColorTypes.White;
         }
 
-        public void RemoveEmpty()
+        public void RemoveCanReverse()
         {
             for (int x = 0; x < size; x++)
             {
