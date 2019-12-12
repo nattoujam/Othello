@@ -8,7 +8,7 @@ namespace Othello
 {
     class WindPressurePhase : Phase
     {
-        private readonly int range = 3;
+        private readonly int range = 1;
         public WindPressurePhase(Board b): base(b) { }
         public override int Play(TurnState myColor, Vector2 clickedCell)
         {
@@ -46,13 +46,13 @@ namespace Othello
             for (int i = start; i < end; i++)
             {
                 var vv = new Vector2(clickedCell.X, i);
-                if(this.board.GetCellColor(vv) == CellColorTypes.White)
+                if(this.board.GetCellColor(vv) == CellColorTypes.Black)
                 {
-                    whiteCells.Add(vv);
+                    blackCells.Add(vv);
                 }
                 else if (this.board.GetCellColor(vv) == CellColorTypes.White)
                 {
-                    blackCells.Add(vv);
+                    whiteCells.Add(vv);
                 }
             }
             baseRule.Reverse(TurnState.White, blackCells);
